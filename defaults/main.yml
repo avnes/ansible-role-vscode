@@ -1,2 +1,9 @@
 ---
 # defaults file for ansible-role-vscode
+
+
+vscode_use_extensions: True
+vscode_extensions: []
+
+vscode_use_config: True
+vscode_config_file: "{{ role_path }}/templates/settings.json.j2"
