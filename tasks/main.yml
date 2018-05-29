@@ -1,2 +1,14 @@
 ---
 # tasks file for ansible-role-vscode
+
+- import_tasks: redhat.yml
+  become: yes
+  when: ansible_os_family == 'RedHat'
+
+- import_tasks: debian.yml
+  become: yes
+  when: ansible_os_family == 'Debian'
+
+- import_tasks: suse.yml
+  become: yes
+  when: ansible_os_family == 'Suse'

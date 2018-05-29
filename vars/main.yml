@@ -1,2 +1,4 @@
 ---
 # vars file for ansible-role-vscode
+
+vscode_microsoft_asc_url: https://packages.microsoft.com/keys/microsoft.asc
