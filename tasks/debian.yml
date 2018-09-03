@@ -1,25 +1,26 @@
 ---
-- name: Download ASC file
-  get_url:
-    url: "{{ vscode_microsoft_asc_url }}"
-    dest: /tmp/microsoft.asc
-
 - name: Update software cache for apt-get
   become: True
   apt:
     update_cache: yes
   changed_when: False
 
-- name: Install GNU Privacy Guard
+- name: Install GPG
   apt:
     name: gpg
     state: present
 
-- name: Convert ASC file for GPG file
-  command: "gpg --dearmor /tmp/microsoft.asc > /etc/apt/trusted.gpg.d/microsoft.gpg"
-  changed_when: False
+- name: Download ASC file
+  apt_key:
+    url: "{{ vscode_microsoft_asc_url }}"
+    state: present
 
-- name: Update software cache for apt-get yet again
+- name: Copy repo list
+  copy:
+    src: vscode.list
+    dest: /etc/apt/sources.list.d/vscode.list
+
+- name: Update software cache for apt-get again
   become: True
   apt:
     update_cache: yes
