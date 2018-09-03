@@ -1,3 +1,5 @@
 FROM {{ item.image }}
 
+RUN dnf install -y python2 python2-dnf libselinux-python ansible sudo
+
 CMD ["/bin/bash"]
