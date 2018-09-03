@@ -1,3 +1,5 @@
+master: [![Build Status](https://travis-ci.org/avnes/ansible-role-vscode.png?branch=master)](https://travis-ci.org/avnes/ansible-role-vscode) develop: [![Build Status](https://travis-ci.org/avnes/ansible-role-vscode.png?branch=develop)](https://travis-ci.org/avnes/ansible-role-vscode)
+
 # ansible-role-vscode
 
 Ansible role for installing Visual Studio Code with extensions and configuring it with a slightly opinionated configuration.
