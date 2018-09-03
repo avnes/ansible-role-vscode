@@ -8,7 +8,7 @@ lint:
   enabled: False
 platforms:
   - name: ansible-role-vscode-default
-    image: fedora:26
+    image: fedora:28
 provisioner:
   name: ansible
   lint:
