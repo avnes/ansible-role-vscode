@@ -6,7 +6,7 @@ Ansible role for installing Visual Studio Code with extensions and configuring i
 
 ## Requirements
 
-None
+None.
 
 ## Role Variables
 
