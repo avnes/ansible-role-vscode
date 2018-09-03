@@ -8,7 +8,7 @@ None
 
 ## Role Variables
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
+Have a look at defaults/main.yml for user configurable variables. It will mainly be the list vscode_extensions and the boolean vscode_use_config that you would want to tweak.
 
 ## Dependencies
 
@@ -16,9 +16,7 @@ None
 
 ## Example Playbook
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
-```
+```yaml
 - hosts: localhost
   roles:
      - avnes.ansible-role-vscode
