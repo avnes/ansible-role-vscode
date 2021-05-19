@@ -1,7 +1,4 @@
 ---
-# defaults file for ansible-role-vscode
-
-
 vscode_use_extensions: True
 vscode_extensions: []
 
