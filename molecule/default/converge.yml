@@ -1,6 +1,8 @@
 ---
 - name: Converge
   hosts: all
+  vars:
+    config_owner: ansible-test-user
   tasks:
     - name: "Include ansible-role-vscode"
       include_role:

@@ -20,6 +20,8 @@ None
 
 ```yaml
 - hosts: localhost
+  vars:
+    config_owner: 'maya'
   roles:
      - avnes.vscode
 ```

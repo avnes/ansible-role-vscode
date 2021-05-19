@@ -6,3 +6,44 @@
 - import_tasks: debian.yml
   become: yes
   when: ansible_os_family == 'Debian'
+
+- name: Create user font directory if it does not exist
+  ansible.builtin.file:
+    path: "{{ config_owner }}/.local/share/fonts"
+    state: directory
+    owner: "{{ config_owner }}"
+    group: "{{ config_owner_primary_group }}"
+    mode: '0750'
+
+- name: Install nerd font
+  get_url:
+    url: "{{ nerd_font_url }}/{{ nerd_font_file | urlencode() }}"
+    dest: "{{ config_owner }}/.local/share/fonts/{{ nerd_font_file }}"
+    owner: "{{ config_owner }}"
+    group: "{{ config_owner_primary_group }}"
+    mode: '0644'
+
+- name: Install extensions
+  command: "/usr/bin/code --install-extension {{ item }}"
+  loop: "{{ vscode_extensions | flatten }}"
+  become: yes
+  become_user: "{{ config_owner }}"
+  when: vscode_use_extensions is defined and vscode_use_extensions
+
+- name: Create vscode config directory if it does not exist
+  ansible.builtin.file:
+    path: "{{ config_owner }}/.config/Code/User"
+    state: directory
+    owner: "{{ config_owner }}"
+    group: "{{ config_owner_primary_group }}"
+    mode: '0750'
+  when: vscode_use_config is defined and vscode_use_config
+
+- name: Install config file
+  template:
+    src: settings.json.j2
+    dest: "{{ config_owner }}/.config/Code/User/settings.json.j2"
+    owner: "{{ config_owner }}"
+    group: "{{ config_owner_primary_group }}"
+    mode: '0755'
+  when: vscode_use_config is defined and vscode_use_config

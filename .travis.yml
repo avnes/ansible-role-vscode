@@ -5,6 +5,11 @@ python: "3.9"
 # Use the new container infrastructure
 sudo: required
 
+before_install:
+ - sudo useradd -d /home/ansible-test-user ansible-test-user
+ - sudo mkdir /home/ansible-test-user
+ - sudo chown ansible-test-user:ansible-test-user /home/ansible-test-user
+
 addons:
   apt:
     packages:

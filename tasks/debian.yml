@@ -5,10 +5,11 @@
     update_cache: yes
   changed_when: False
 
-- name: Install GPG
+- name: Install required software
   apt:
-    name: gpg
+    name: "{{ item }}"
     state: present
+  loop: "{{ vscode_ubuntu_required_software | flatten }}"
 
 - name: Download ASC file
   apt_key:

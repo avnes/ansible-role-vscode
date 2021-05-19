@@ -1,6 +1,5 @@
 {
     "telemetry.enableCrashReporter": false,
-    "editor.formatOnSave": true,
     "editor.lineNumbers": "on",
     "editor.detectIndentation": true,
     "editor.wordWrap": "off",
@@ -8,21 +7,15 @@
     "files.insertFinalNewline": true,
     "files.trimTrailingWhitespace": true,
     "editor.trimAutoWhitespace": true,
-    "terminal.integrated.fontFamily": "Source Code Pro",
-    "python.pythonPath": "/home/username/.virtualenvs/vscode/bin/python",
-    "python.venvPath": "/home/username/.virtualenvs/vscode",
+    "terminal.integrated.fontFamily": "{{ nerd_font_name }}",
+    "python.pythonPath": "{{ ansible_user_dir }}/.virtualenvs/default/bin/python",
+    "python.venvPath": "{{ ansible_user_dir }}/.virtualenvs/default",
     "python.linting.enabled": true,
-    "python.linting.pep8Enabled": false,
+    "python.linting.pycodestyleEnabled": false,
     "python.linting.flake8Enabled": true,
-    "python.unitTest.unittestEnabled": false,
+    "python.testing.unittestEnabled": false,
     "workbench.startupEditor": "newUntitledFile",
-    "docker-explorer.enableTelemetry": false,
-    "docker-explorer.showAzureRegistries": false,
-    "docker-explorer.showDockerContainers": false,
-    "docker-explorer.showDockerHubTreeView": false,
-    "docker-explorer.showSuggestedDockerImages": false,
-    "docker-explorer.showDockerImages": false,
-    "workbench.colorTheme": "Solarized Dark",
+    "workbench.colorTheme": "Darcula",
     "workbench.editor.enablePreview": false,
     "gitlens.advanced.messages": {
         "suppressCommitHasNoPreviousCommitWarning": false,
@@ -31,8 +24,39 @@
         "suppressGitVersionWarning": false,
         "suppressLineUncommittedWarning": false,
         "suppressNoRepositoryWarning": false,
-        "suppressResultsExplorerNotice": false,
-        "suppressShowKeyBindingsNotice": true
     },
     "workbench.iconTheme": null,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "explorer.confirmDelete": false,
+    "workspacesort.workspaceDirectory": "{{ ansible_user_dir }}/Documents",
+    "[json]": {
+        "editor.defaultFormatter": "HookyQR.beautify"
+    },
+    "git.enableSmartCommit": true,
+    "editor.autoIndent": "brackets",
+    "terraform.languageServer": {
+        "external": true,
+        "args": [
+            "serve"
+        ]
+    },
+    "[terraform]": {
+        "editor.formatOnSave": true
+    },
+    "editor.minimap.enabled": false,
+    "editor.suggestSelection": "first",
+    "python.languageServer": "Pylance",
+    "debug.onTaskErrors": "debugAnyway",
+    "diffEditor.ignoreTrimWhitespace": false,
+    "go.toolsManagement.autoUpdate": true,
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "window.zoomLevel": 2,
+    "diffEditor.codeLens": true,
+    "workbench.editor.untitled.hint": "hidden"
 }

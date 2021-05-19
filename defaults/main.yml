@@ -1,8 +1,54 @@
 ---
+config_owner: "{{ ansible_user_id }}"
+config_owner_primary_group: "{{ config_owner }}"
+
 vscode_use_extensions: True
-vscode_extensions: []
+vscode_extensions:
+  - 'byi8220.indented-block-highlighting'
+  - 'CoenraadS.bracket-pair-colorizer-2'
+  - 'DavidAnson.vscode-markdownlint'
+  - 'DotJoshJohnson.xml'
+  - 'eamodio.gitlens'
+  - 'golang.go'
+  - 'hashicorp.terraform'
+  - 'himanoa.Python-autopep8'
+  - 'HookyQR.beautify'
+  - 'iciclesoft.workspacesort'
+  - 'jtr.vscode-position'
+  - 'marlon407.code-groovy'
+  - 'ms-azuretools.vscode-azurefunctions'
+  - 'ms-azuretools.vscode-docker'
+  - 'ms-dotnettools.csharp'
+  - 'ms-kubernetes-tools.vscode-kubernetes-tools'
+  - 'ms-python.python'
+  - 'ms-python.vscode-pylance'
+  - 'ms-toolsai.jupyter'
+  - 'ms-vscode-remote.remote-containers'
+  - 'ms-vscode.azure-account'
+  - 'ms-vscode.azurecli'
+  - 'ms-vscode.hexeditor'
+  - 'patcx.vscode-nuget-gallery'
+  - 'redhat.vscode-yaml'
+  - 'rokoroku.vscode-theme-darcula'
+  - 'samuelcolvin.jinjahtml'
+  - 'tuxtina.json2yaml'
+  - 'wesbos.theme-cobalt2'
+  - 'yzhang.markdown-all-in-one'
+  - 'ZainChen.json'
 
 vscode_use_config: True
-vscode_config_file: "{{ role_path }}/templates/settings.json.j2"
 
 vscode_microsoft_asc_url: https://packages.microsoft.com/keys/microsoft.asc
+
+vscode_ubuntu_required_software:
+  - gpg
+  - libasound2
+  - libxshmfence-dev
+
+vscode_fedora_required_software:
+  - libxshmfence
+  - libxshmfence-devel
+
+nerd_font_url: https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/SourceCodePro/Regular/complete
+nerd_font_file: 'Sauce Code Pro Nerd Font Complete.ttf'
+nerd_font_name: 'SauceCodePro Nerd Font'
