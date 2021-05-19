@@ -1,3 +1,6 @@
-ansible>=2.6.3
-docker-py>=1.10.6
-molecule>=2.17.0
+ansible>=3.3.0
+ansible-lint>=5.0.8
+flake8>=3.9.2
+molecule>=3.3.0
+molecule-docker>=0.2.4
+yamllint>=1.26.1
