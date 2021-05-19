@@ -21,7 +21,16 @@ None
 ```yaml
 - hosts: localhost
   roles:
-     - avnes.ansible-role-vscode
+     - avnes.vscode
+```
+
+## Test
+
+```bash
+virtualenv ~/.virtualenv/ansible-role-vscode
+source ~/.virtualenv/ansible-role-vscode/bin/activate
+pip install -r requirements.txt
+molecule test
 ```
 
 ## License
