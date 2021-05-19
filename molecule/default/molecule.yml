@@ -1,0 +1,29 @@
+---
+dependency:
+  name: galaxy
+driver:
+  name: docker
+platforms:
+  - name: ansible-role-vscode-fedora
+    image: ghcr.io/avnes/molecule-fedora:34
+    pre_build_image: True
+  - name: ansible-role-vscode-ubuntu
+    image: ghcr.io/avnes/molecule-ubuntu:latest
+    pre_build_image: True
+provisioner:
+  name: ansible
+  config_options:
+    defaults:
+      interpreter_python: auto_silent
+      callback_whitelist: profile_tasks, timer, yaml
+    ssh_connection:
+      pipelining: False
+  options:
+    vvv: True
+lint: |
+  set -e
+  yamllint .
+  ansible-lint
+  flake8
+verifier:
+  name: ansible

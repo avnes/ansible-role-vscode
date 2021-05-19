@@ -16,9 +16,10 @@
     state: present
 
 - name: Copy repo list
-  copy:
+  ansible.builtin.copy:
     src: vscode.list
     dest: /etc/apt/sources.list.d/vscode.list
+    mode: '0644'
 
 - name: Update software cache for apt-get again
   become: True

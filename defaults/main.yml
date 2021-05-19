@@ -4,3 +4,5 @@ vscode_extensions: []
 
 vscode_use_config: True
 vscode_config_file: "{{ role_path }}/templates/settings.json.j2"
+
+vscode_microsoft_asc_url: https://packages.microsoft.com/keys/microsoft.asc

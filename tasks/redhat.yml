@@ -5,9 +5,10 @@
     state: present
 
 - name: Create rpm repository file
-  copy:
+  ansible.builtin.copy:
     src: vscode.repo
     dest: /etc/yum.repos.d/vscode.repo
+    mode: '0644'
 
 - name: Install Vistual Studio Code
   package:
