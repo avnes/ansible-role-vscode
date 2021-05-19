@@ -22,6 +22,7 @@
     owner: "{{ config_owner }}"
     group: "{{ config_owner_primary_group }}"
     mode: '0644'
+  changed_when: False
 
 - name: Install extensions
   command: "/usr/bin/code --install-extension {{ item }}"
@@ -29,6 +30,7 @@
   become: yes
   become_user: "{{ config_owner }}"
   when: vscode_use_extensions is defined and vscode_use_extensions
+  changed_when: False
 
 - name: Create vscode config directory if it does not exist
   ansible.builtin.file:

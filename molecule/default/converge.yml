@@ -3,6 +3,8 @@
   hosts: all
   vars:
     config_owner: ansible-test-user
+    vscode_extensions:
+      - 'HookyQR.beautify'
   tasks:
     - name: "Include ansible-role-vscode"
       include_role:
