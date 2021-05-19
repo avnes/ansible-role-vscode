@@ -5,8 +5,8 @@
     state: present
 
 - name: Create rpm repository file
-  template:
-    src: vscode.repo.j2
+  copy:
+    src: vscode.repo
     dest: /etc/yum.repos.d/vscode.repo
 
 - name: Install Vistual Studio Code
