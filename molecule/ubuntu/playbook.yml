@@ -1,8 +1,0 @@
----
-- name: Converge
-  hosts: all
-  vars:
-    vscode_extensions:
-      - tuxtina.json2yaml
-  roles:
-    - role: ansible-role-vscode

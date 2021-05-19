@@ -1,8 +1,0 @@
-# Molecule managed
-
-FROM {{ item.image }}
-
-RUN apt-get update && \
-    apt-get install -y ansible sudo
-
-CMD ["/bin/bash"]
