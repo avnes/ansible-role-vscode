@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "ansible-role-vscode"
+version = "0.1.0"
+description = "Ansible role for installing Visual Studio Code with extensions and configuring it"
+authors = ["Audun Nes <audun.nes@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.10"
+ansible = "^4.8.0"
+
+[tool.poetry.dev-dependencies]
+ansible-lint = "^5.2.1"
+flake8 = "^4.0.1"
+yamllint = "^1.26.3"
+molecule-docker = "^1.1.0"
+molecule = "^3.5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

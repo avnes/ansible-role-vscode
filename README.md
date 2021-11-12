@@ -6,7 +6,7 @@ Ansible role for installing Visual Studio Code with extensions and configuring i
 
 ## Requirements
 
-None.
+Poetry. Install it from <https://python-poetry.org/docs/>
 
 ## Role Variables
 
@@ -26,12 +26,17 @@ None
      - avnes.vscode
 ```
 
+## For pip compability
+
+```bash
+poetry export --dev --output requirements.txt
+```
+
 ## Test
 
 ```bash
-virtualenv ~/.virtualenv/ansible-role-vscode
-source ~/.virtualenv/ansible-role-vscode/bin/activate
-pip install -r requirements.txt
+poetry install
+poetry shell
 molecule test
 ```
 
