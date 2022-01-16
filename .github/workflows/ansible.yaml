@@ -24,7 +24,6 @@ jobs:
       - name: Run Molecule test case
         uses: robertdebock/molecule-action@2.6.3
   release:
-    if: ${{ github.event_name == 'release' }}
     needs:
       - test
     runs-on: ubuntu-latest
