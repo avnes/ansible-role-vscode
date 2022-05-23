@@ -1,7 +1,7 @@
 {
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "branchPrefix": "feature/renovate/",
-    "dryRun": false,
+    "dryRun": "false",
     "username": "avnes",
     "onboarding": false,
     "platform": "github",
