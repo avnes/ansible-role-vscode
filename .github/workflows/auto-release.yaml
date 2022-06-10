@@ -2,7 +2,9 @@ name: Auto release on merge
 
 on:
   push:
-    branches: ["master", "main"]
+    branches: [ main ]
+    paths-ignore:
+      - '.github/**'
 
 jobs:
   auto-release:
