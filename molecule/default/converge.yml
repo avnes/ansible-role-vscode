@@ -7,5 +7,5 @@
       - 'HookyQR.beautify'
   tasks:
     - name: "Include ansible-role-vscode"
-      include_role:
+      ansible.builtin.include_role:
         name: "ansible-role-vscode"

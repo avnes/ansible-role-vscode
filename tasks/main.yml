@@ -16,7 +16,7 @@
     mode: '0750'
 
 - name: Install nerd font
-  get_url:
+  ansible.builtin.get_url:
     url: "{{ nerd_font_url }}/{{ nerd_font_file | urlencode() }}"
     dest: "{{ config_owner }}/.local/share/fonts/{{ nerd_font_file }}"
     owner: "{{ config_owner }}"
@@ -25,7 +25,7 @@
   changed_when: False
 
 - name: Install extensions
-  command: "/usr/bin/code --install-extension {{ item }}"
+  ansible.builtin.command: "/usr/bin/code --install-extension {{ item }}"
   loop: "{{ vscode_extensions | flatten }}"
   become: yes
   become_user: "{{ config_owner }}"
@@ -42,7 +42,7 @@
   when: vscode_use_config is defined and vscode_use_config
 
 - name: Install config file
-  template:
+  ansible.builtin.template:
     src: settings.json.j2
     dest: "{{ config_owner }}/.config/Code/User/settings.json.j2"
     owner: "{{ config_owner }}"

@@ -1,12 +1,12 @@
 ---
 - name: Install required software
-  package:
+  ansible.builtin.package:
     name: "{{ item }}"
     state: present
   loop: "{{ vscode_fedora_required_software | flatten }}"
 
 - name: Import RPM key
-  rpm_key:
+  ansible.builtin.rpm_key:
     key: "{{ vscode_microsoft_asc_url }}"
     state: present
 
@@ -17,6 +17,6 @@
     mode: '0644'
 
 - name: Install Visual Studio Code
-  package:
+  ansible.builtin.package:
     name: code
     state: present
