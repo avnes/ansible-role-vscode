@@ -1,0 +1,30 @@
+{
+    "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+    "branchPrefix": "feature/renovate/",
+    "username": "avnes",
+    "onboarding": false,
+    "platform": "github",
+    "repositories": [],
+    "packageRules": [
+        {
+            "matchUpdateTypes": [
+                "pin",
+                "digest",
+                "patch",
+                "minor",
+                "lockFileMaintenance"
+            ],
+            "stabilityDays": 0,
+            "automerge": true,
+            "matchCurrentVersion": "!/^0/",
+            "ignoreTests": true
+        },
+        {
+            "matchUpdateTypes": [
+                "major"
+            ],
+            "stabilityDays": 0,
+            "automerge": false
+        }
+    ]
+}
