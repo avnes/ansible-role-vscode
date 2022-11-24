@@ -11,7 +11,7 @@ ansible = "^7.0.0"
 
 [tool.poetry.dev-dependencies]
 ansible-lint = "^6.0.0"
-flake8 = "^5.0.0"
+flake8 = "^6.0.0"
 yamllint = "^1.26.3"
 molecule-docker = "^2.0.0"
 molecule = "^4.0.0"
