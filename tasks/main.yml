@@ -1,9 +1,11 @@
 ---
-- import_tasks: redhat.yml
+- name: Import RHEL family specifics
+  ansible.builtin.import_tasks: redhat.yml
   become: yes
   when: ansible_os_family == 'RedHat'
 
-- import_tasks: debian.yml
+- name: Import Debian family specifics
+  ansible.builtin.import_tasks: debian.yml
   become: yes
   when: ansible_os_family == 'Debian'
 
@@ -13,7 +15,7 @@
     state: directory
     owner: "{{ config_owner }}"
     group: "{{ config_owner_primary_group }}"
-    mode: '0750'
+    mode: "0750"
 
 - name: Install nerd font
   ansible.builtin.get_url:
@@ -21,7 +23,7 @@
     dest: "{{ config_owner }}/.local/share/fonts/{{ nerd_font_file }}"
     owner: "{{ config_owner }}"
     group: "{{ config_owner_primary_group }}"
-    mode: '0644'
+    mode: "0644"
   changed_when: False
 
 - name: Install extensions
@@ -38,7 +40,7 @@
     state: directory
     owner: "{{ config_owner }}"
     group: "{{ config_owner_primary_group }}"
-    mode: '0750'
+    mode: "0750"
   when: vscode_use_config is defined and vscode_use_config
 
 - name: Install config file
@@ -47,5 +49,5 @@
     dest: "{{ config_owner }}/.config/Code/User/settings.json.j2"
     owner: "{{ config_owner }}"
     group: "{{ config_owner_primary_group }}"
-    mode: '0755'
+    mode: "0755"
   when: vscode_use_config is defined and vscode_use_config
