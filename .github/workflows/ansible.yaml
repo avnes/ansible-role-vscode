@@ -27,7 +27,7 @@ jobs:
       - name: Create ephemeral requirements.txt for pip
         run: "cd ${{ github.repository }} && $HOME/.local/bin/poetry export --dev --output requirements.txt"
       - name: Run Molecule test case
-        uses: robertdebock/molecule-action@5.0.0
+        uses: robertdebock/molecule-action@5.0.1
   release:
     needs:
       - test
