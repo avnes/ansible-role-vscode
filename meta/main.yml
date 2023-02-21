@@ -1,4 +1,3 @@
----
 galaxy_info:
   role_name: vscode
   author: avnes
@@ -13,9 +12,7 @@ galaxy_info:
         - any
     - name: Ubuntu
       versions:
-        - groovy
-        - hirsute
-        - impish
+        - any
 
   galaxy_tags:
     - vscode
