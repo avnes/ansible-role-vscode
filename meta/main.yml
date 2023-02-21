@@ -10,8 +10,7 @@ galaxy_info:
   platforms:
     - name: Fedora
       versions:
-        - 34
-        - 35
+        - any
     - name: Ubuntu
       versions:
         - groovy
