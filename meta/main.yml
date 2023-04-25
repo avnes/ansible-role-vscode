@@ -2,17 +2,16 @@ galaxy_info:
   role_name: vscode
   author: avnes
   description: Ansible role for installing Visual Studio Code with extensions and configuring it
-  company:
   license: license (MIT)
   min_ansible_version: 2.9
 
   platforms:
     - name: Fedora
       versions:
-        - "any"
+        - any
     - name: Ubuntu
       versions:
-        - "any"
+        - any
 
   galaxy_tags:
     - vscode
