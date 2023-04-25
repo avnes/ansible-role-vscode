@@ -1,6 +1,6 @@
 # ansible-role-vscode
 
-![Ansible](https://github.com/avnes/ansible-role-vscode/actions/workflows/ansible.yaml/badge.svg)
+![Ansible](https://github.com/avnes/ansible-role-vscode/actions/workflows/pr-validator.yaml/badge.svg)
 
 Ansible role for installing Visual Studio Code with extensions and configuring it with a slightly opinionated configuration.
 
