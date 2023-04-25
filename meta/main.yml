@@ -3,7 +3,7 @@ galaxy_info:
   author: avnes
   description: Ansible role for installing Visual Studio Code with extensions and configuring it
   license: license (MIT)
-  min_ansible_version: 2.9
+  min_ansible_version: "2.9"
 
   platforms:
     - name: Fedora
