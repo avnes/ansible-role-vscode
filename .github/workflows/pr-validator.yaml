@@ -1,23 +1,12 @@
-name: Ansible test and publish
+name: Pull Request Validator
 on:
-  push:
-    branches: [ main ]
-    paths-ignore:
-      - '.github/**'
-      - '.gitignore'
-      - '.yamllint'
-      - 'LICENSE'
-      - 'README.md'
-      - 'renovate.json'
   pull_request:
     branches: ["main"]
-  release:
-    types: ["released"]
 
   workflow_dispatch:
 
 jobs:
-  test:
+  ansible:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout source code
@@ -28,18 +17,8 @@ jobs:
         run: "curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/install-poetry.py | python -"
       - uses: actions/setup-python@v4
         with:
-          python-version: '3.9'
+          python-version: "3.9"
       - name: Create ephemeral requirements.txt for pip
         run: "cd ${{ github.repository }} && $HOME/.local/bin/poetry export --dev --output requirements.txt"
       - name: Run Molecule test case
         uses: robertdebock/molecule-action@5.0.2
-  release:
-    needs:
-      - test
-    runs-on: ubuntu-latest
-    steps:
-      - name: Publish to Ansible Galaxy
-        uses: robertdebock/galaxy-action@1.2.1
-        with:
-          galaxy_api_key: ${{ secrets.GALAXY_API_KEY }}
-          git_branch: main
