@@ -14,7 +14,6 @@ vscode_extensions:
   - 'HookyQR.beautify'
   - 'iciclesoft.workspacesort'
   - 'jtr.vscode-position'
-  - 'marlon407.code-groovy'
   - 'ms-azuretools.vscode-azurefunctions'
   - 'ms-azuretools.vscode-docker'
   - 'ms-dotnettools.csharp'
