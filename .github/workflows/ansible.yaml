@@ -4,6 +4,10 @@ on:
     branches: [ main ]
     paths-ignore:
       - '.github/**'
+      - '.gitignore'
+      - '.yamllint'
+      - 'LICENSE'
+      - 'README.md'
       - 'renovate.json'
   pull_request:
     branches: ["main"]
