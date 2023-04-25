@@ -5,7 +5,6 @@ config_owner_primary_group: "{{ config_owner }}"
 vscode_use_extensions: True
 vscode_extensions:
   - 'byi8220.indented-block-highlighting'
-  - 'CoenraadS.bracket-pair-colorizer-2'
   - 'DavidAnson.vscode-markdownlint'
   - 'DotJoshJohnson.xml'
   - 'eamodio.gitlens'
