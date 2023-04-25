@@ -9,10 +9,10 @@ galaxy_info:
   platforms:
     - name: Fedora
       versions:
-        - any
+        - "any"
     - name: Ubuntu
       versions:
-        - any
+        - "any"
 
   galaxy_tags:
     - vscode
