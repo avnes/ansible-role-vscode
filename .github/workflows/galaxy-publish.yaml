@@ -1,4 +1,5 @@
 name: Publish to Ansible Galaxy
+
 on:
   release:
     types: ["released", "published"]
