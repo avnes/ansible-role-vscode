@@ -47,6 +47,6 @@ vscode_fedora_required_software:
   - libxshmfence
   - libxshmfence-devel
 
-nerd_font_url: https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/SourceCodePro/Regular/complete
-nerd_font_file: 'Sauce Code Pro Nerd Font Complete.ttf'
+nerd_font_url: https://github.com/ryanoasis/nerd-fonts/blob/master/patched-fonts/SourceCodePro/Regular
+nerd_font_file: 'SauceCodeProNerdFont-Regular.ttf'
 nerd_font_name: 'SauceCodePro Nerd Font'
